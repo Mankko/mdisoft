@@ -1,37 +1,32 @@
 # MDI Soft — Developer Website
 
-Official static developer website for **MDI Soft**.
+Official bilingual developer website for **MDI Soft**, published at https://mdisoft.pages.dev/.
 
 ## Products
 
-- **Jamtronome:** nearby synchronized Android metronome for solo and group practice. Google Play production release is being prepared.
+- **Jamtronome:** Android metronome for individual practice and nearby synchronized rehearsals. Released on Google Play. [Google Play](https://play.google.com/store/apps/details?id=com.mankko.jamtronome).
+- **ScoreBinder:** Android offline PDF/image sheet music viewer, album library, flexible page layouts and Bluetooth HID page turning. **Preparing for Google Play release**.
 - **Stem Lab:** Windows stem separation, analysis and music practice tools. [Stem Lab Free releases](https://github.com/Mankko/stem-lab-releases).
 
-## Publishing through GitHub Pages
+## Deployment
 
-1. Open [Settings → Pages](https://github.com/Mankko/mdisoft/settings/pages).
-2. Under **Build and deployment**, select **Deploy from a branch**.
-3. Choose **main** and **/(root)**, then **Save**.
-4. After GitHub Pages finishes publishing, check https://mankko.github.io/mdisoft/.
+The website is deployed through the existing **Cloudflare Pages** project `mdisoft` at https://mdisoft.pages.dev/, connected to the `main` branch of `Mankko/mdisoft`. The website is static and has no application compilation step.
 
-The URL above is a **temporary project-site address**, not a company-owned domain.
+Source files:
+- `index.html`: company homepage and product summaries.
+- `app-ads.txt`: AdMob authorized seller declaration (do not modify without verifying the publisher account).
+- `.nojekyll`: compatibility with GitHub Pages.
+- `README.md`: site documentation.
+
+The prior instructions describing GitHub Pages as the primary deployment site are historical and have been superseded by Cloudflare Pages.
 
 ## Google AdMob app-ads.txt
 
-The repository includes `app-ads.txt`, with the publisher ID derived from the Jamtronome release configuration.
+The public seller declaration is served at https://mdisoft.pages.dev/app-ads.txt. Verify that its content continues to match AdMob when advertising settings change.
 
-**Important:**
-- Verify the file's seller line against the exact one shown in AdMob.
-- Google's app-ads.txt validation normally discovers the file at the **root of the developer website's domain**.
-- A project URL like `https://mankko.github.io/mdisoft/app-ads.txt` alone is not equivalent to `https://mankko.github.io/app-ads.txt`, and should **not** be treated as a completed AdMob verification.
-- To establish MDI Soft branding and a suitable root URL, connect a **company-owned custom domain** to this GitHub Pages repository. A domain must be registered separately; this has not been done or verified here.
-- After configuring the domain and DNS, verify `https://YOUR_DOMAIN/app-ads.txt` returns HTTP 200 with the exact seller line. Register `https://YOUR_DOMAIN/` as the Google Play developer website and check AdMob status.
+## Safety and release operations
 
-## Repository contents
-
-- `index.html` — official site home page (Korean + English)
-- `app-ads.txt` — AdMob authorized seller declaration
-- `.nojekyll` — disable Jekyll processing for GitHub Pages
-- `README.md` — these instructions
-
-No Android application source code, credentials, or private personal data should be committed here.
+- Do not commit passwords, signing keys, private data, or AdMob account secrets to this repository.
+- **Android APK/AAB builds and tests are local-only** in their respective Windows development folders; no GitHub Actions Android builds may be introduced for ScoreBinder.
+- Updating this static homepage through Git does not constitute building, signing, or publishing an Android app.
+- ScoreBinder's Play link will be added after its public store listing is actually available.
