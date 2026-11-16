@@ -20,6 +20,12 @@ Source files:
 
 The prior instructions describing GitHub Pages as the primary deployment site are historical and have been superseded by Cloudflare Pages.
 
+## ScoreBinder Privacy Policy
+
+Public bilingual policy: https://mdisoft.pages.dev/scorebinder-privacy-policy.html. The page discloses local sheet music storage, exported ZIP backups, Google Mobile Ads/UMP data handling, retention/deletion, privacy contact and security practices. Linked from the ScoreBinder product card and footer.
+
+After editing, verify the Cloudflare Pages public URL actually returns HTTP 200 and is accessible without authentication. Keep its wording consistent with the current app and Play Data safety declaration.
+
 ## Google AdMob app-ads.txt
 
 The public seller declaration is served at https://mdisoft.pages.dev/app-ads.txt. Verify that its content continues to match AdMob when advertising settings change.
